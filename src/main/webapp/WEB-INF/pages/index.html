@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+<form action="#" th:action="@{/check}" th:object="${user}"
+
+      method="POST">
+
+    <table>
+
+        <tr>
+
+            <td>First Name</td>
+
+            <td><input type="text" th:field="*{firstname}"/></td>
+
+            <td th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}">Name Error</td>
+
+        </tr>
+        <tr>
+
+            <td>Last Name</td>
+
+            <td><input type="text" th:field="*{lastName}"/></td>
+
+            <td th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">age Error</td>
+
+        </tr>
+        <tr>
+
+            <td>Phone</td>
+
+            <td><input type="text" th:field="*{phoneNumber}"/></td>
+
+            <td th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}">email Error</td>
+
+        </tr>
+        <tr>
+
+            <td>Email</td>
+
+            <td><input type="text" th:field="*{email}"/></td>
+
+            <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">email Error</td>
+
+        </tr>
+
+    </table>
+
+    <button type="submit">submit</button>
+
+</form>
+</body>
+</html>
